@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../components/Layout";
 import setting from "../setting";
 
@@ -8,7 +9,13 @@ export default function Home() {
         <h1>simple-base64💓</h1>
         <img id='Logo' src={`${setting.basePath}/tako.png`} alt="Logo" />
         <p className="mt-5">BASE64エンコード・デコードするサイトです。</p>
-        <div id="IndexLink">
+        <div id="IndexLink" className="mt-5">
+          <Link href={`${setting.basePath}/encoder/`} className="EncoderLink btn btn-outline-primary">
+            <div>BASE64エンコード</div>
+          </Link>
+          <Link href={`${setting.basePath}/decoder/`} className="DecoderLink btn btn-outline-success">
+            <div>BASE64デコード</div>
+          </Link>
         </div>
       </div>
     </Layout>
