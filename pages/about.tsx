@@ -5,7 +5,6 @@ import Layout from "../components/Layout";
 const base64_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".split('');
 
 export default function AbutPage() {
-
   return (
     <Layout>
       <div id="About">
