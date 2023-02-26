@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import setting from '../setting';
-import Menu from './menu';
+import Menu from './Menu';
 
 type Props = {
   children?: ReactNode,

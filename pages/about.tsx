@@ -1,11 +1,25 @@
+import React from "react";
+
 import Layout from "../components/Layout";
 
-export default function HelloWorld() {
+const base64_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".split('');
+
+export default function AbutPage() {
   return (
     <Layout>
-      <div id="About" className="mt-3">
-        <h1>Here, About page.</h1>
-        <p>Next.js大好きです。<br />本当に使いやすいです。<br />僕はTypeScript × Next.jsを強くオススメします。<br /><br />静的型付け言語って難しいと思われがちですが、エディタの機能が豊富な現在は型付け言語の方が簡単に書くことができます。<br />さらには字句解析と構文解析に加えて、コンパイル時に、コンパイラによる意味解析を行ってくれるため、動的型付け言語と比較して動作に信頼性があります。<br /><br />また、Reactと比べてNext.jsはSSGによってビルド時にHTMLが生成されるため、SPA(SSR)と比べて高速に動作し、ユーザビリティが高いです。</p>
+      <div id="About">
+        <h1>What is BASE64?</h1>
+        <p className="mt-3">BASE64とはバイナリデータ(テキストデータを含むすべてのデータ)を一定の規則で、以下の64種の半角英数字と一部記号に変換した表記のことを言います。</p>
+        <div id="Base64Letters">
+          {
+            base64_letters.map((letter, _) => {
+              return (
+                <div key={letter}>{letter}</div>
+              );
+            })
+          }
+        </div>
+        <p className="mt-3">これによって画像や動画などのデータを文字列として扱うことができるようになります。<br /><br />しかしながら、バイナリを文字に変換するため、データ量が大きくなるという問題があります。<br />データ量はおおよそ、1.3倍になります。</p>
       </div>
     </Layout>
   );

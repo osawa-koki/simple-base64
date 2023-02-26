@@ -4,10 +4,10 @@ const Env = require('./next.config.js');
 const isProd = process.env.NODE_ENV === 'production';
 
 const Setting = {
-  title: '🐟 nextjs-template.modern 🐟',
+  title: '🦖 simple-base64 🦖',
   isProd,
   basePath: Env.basePath,
-  apiPath: isProd ? '' : 'http://localhost:80',
+  timeout: 3000,
 };
 
 export default Setting;
