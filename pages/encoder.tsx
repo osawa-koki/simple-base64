@@ -37,7 +37,7 @@ export default function EncoderPage() {
         <Form>
           <Form.Group className="mb-3">
             <Form.Label>変換するデータ</Form.Label>
-            <Form.Control as="textarea" rows={7} onInput={(e) => {setResult(null); setText((e.target as HTMLTextAreaElement).value)}} />
+            <Form.Control as="textarea" rows={7} onInput={(e) => {setResult(null); setMessage(null); setText((e.target as HTMLTextAreaElement).value)}} />
           </Form.Group>
           <Button variant="primary" onClick={Encode}>
             変換
