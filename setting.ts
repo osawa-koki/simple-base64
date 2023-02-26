@@ -7,7 +7,6 @@ const Setting = {
   title: '🦖 simple-base64 🦖',
   isProd,
   basePath: Env.basePath,
-  apiPath: isProd ? '' : 'http://localhost:80',
 };
 
 export default Setting;
