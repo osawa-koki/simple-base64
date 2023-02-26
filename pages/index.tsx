@@ -7,7 +7,7 @@ export default function Home() {
     <Layout menu={false} footer={false}>
       <div id='Index'>
         <h1 className="mt-5">simple-base64💓</h1>
-        <img id='Logo' src={`${setting.basePath}/tako.png`} alt="Logo" />
+        <img id='Logo' src={`${setting.basePath}/tako.png`} alt="Logo" className="mt-3" />
         <p className="mt-5">BASE64エンコード・デコードするサイトです。</p>
         <div id="IndexLink" className="mt-5">
           <Link href={`${setting.basePath}/encoder/`} className="EncoderLink btn btn-outline-primary">
