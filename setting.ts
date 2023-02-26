@@ -7,6 +7,7 @@ const Setting = {
   title: '🦖 simple-base64 🦖',
   isProd,
   basePath: Env.basePath,
+  timeout: 3000,
 };
 
 export default Setting;

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 import { Button, Alert, Form } from 'react-bootstrap';
 import Layout from "../components/Layout";
+import Setting from "../setting";
 
 export default function EncoderPage() {
 
   const [text, setText] = useState<string | null>(null);
   const [result, setResult] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
 
   const Encode = () => {
     if (text === null) {
@@ -14,6 +16,17 @@ export default function EncoderPage() {
     }
     const encoded = Buffer.from(text).toString('base64');
     setResult(encoded);
+  };
+
+  const Copy = () => {
+    if (result === null) {
+      return;
+    }
+    navigator.clipboard.writeText(result);
+    setMessage('コピーしました。');
+    setTimeout(() => {
+      setMessage(null);
+    }, Setting.timeout);
   };
 
   return (
@@ -39,9 +52,16 @@ export default function EncoderPage() {
                   <Form.Label>BASE64エンコードされたデータ</Form.Label>
                   <Form.Control as="textarea" rows={7} value={result} readOnly />
                 </Form.Group>
-                <Button variant="success">
+                <Button variant="success" onClick={Copy}>
                   コピー
                 </Button>
+                {
+                  message !== null && (
+                    <Alert variant="success" className="mt-3">
+                      {message}
+                    </Alert>
+                  )
+                }
               </Form>
             </>
           )
