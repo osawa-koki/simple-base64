@@ -5,10 +5,10 @@ const SUB_DIRECTORY = "/simple-base64";
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  basePath: isProd ? SUB_DIRECTORY : "",
-  assetPrefix: isProd ? SUB_DIRECTORY : "",
+  basePath: isProd ? SUB_DIRECTORY : '',
+  assetPrefix: isProd ? SUB_DIRECTORY : '',
   publicRuntimeConfig: {
-    basePath: isProd ? SUB_DIRECTORY : "",
+    basePath: isProd ? SUB_DIRECTORY : '',
   },
   trailingSlash: true,
 };
