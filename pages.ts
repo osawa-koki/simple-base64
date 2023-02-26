@@ -7,11 +7,16 @@ const pages = [
   },
   {
     emoji: "📖",
+    path: "/about/",
+    name: "About",
+  },
+  {
+    emoji: "🦑",
     path: "/encoder/",
     name: "Encode",
   },
   {
-    emoji: "💓",
+    emoji: "🐙",
     path: "/decoder/",
     name: "Decode",
   },
