@@ -1,11 +1,71 @@
-import Layout from "../components/Layout";
+import React, { useState } from "react";
 
-export default function HelloWorld() {
+import { Button, Alert, Form } from 'react-bootstrap';
+import Layout from "../components/Layout";
+import Setting from "../setting";
+
+export default function DecoderPage() {
+
+  const [text, setText] = useState<string | null>(null);
+  const [result, setResult] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
+
+  const Decode = () => {
+    if (text === null) {
+      return;
+    }
+    const decoded = Buffer.from(text, 'base64').toString('utf-8');
+    setResult(decoded);
+  };
+
+  const Copy = () => {
+    if (result === null) {
+      return;
+    }
+    navigator.clipboard.writeText(result);
+    setMessage('コピーしました。');
+    setTimeout(() => {
+      setMessage(null);
+    }, Setting.timeout);
+  };
+
   return (
     <Layout>
-      <div id="About" className="mt-3">
-        <h1>Here, About page.</h1>
-        <p>Next.js大好きです。<br />本当に使いやすいです。<br />僕はTypeScript × Next.jsを強くオススメします。<br /><br />静的型付け言語って難しいと思われがちですが、エディタの機能が豊富な現在は型付け言語の方が簡単に書くことができます。<br />さらには字句解析と構文解析に加えて、コンパイル時に、コンパイラによる意味解析を行ってくれるため、動的型付け言語と比較して動作に信頼性があります。<br /><br />また、Reactと比べてNext.jsはSSGによってビルド時にHTMLが生成されるため、SPA(SSR)と比べて高速に動作し、ユーザビリティが高いです。</p>
+      <div id="Decoder">
+        <h1>BASE64 Decoder</h1>
+        <p>BASE64形式のデータをデコードします。</p>
+        <Form>
+          <Form.Group className="mb-3">
+            <Form.Label>BASE64エンコードされたデータ</Form.Label>
+            <Form.Control as="textarea" rows={7} onInput={(e) => {setResult(null); setMessage(null); setText((e.target as HTMLTextAreaElement).value)}} />
+          </Form.Group>
+          <Button variant="primary" onClick={Decode}>
+            変換
+          </Button>
+        </Form>
+        {
+          result !== null && (
+            <>
+              <hr />
+              <Form className="mt-3">
+                <Form.Group className="mb-3">
+                  <Form.Label>デコードされたデータ</Form.Label>
+                  <Form.Control as="textarea" rows={7} value={result} readOnly />
+                </Form.Group>
+                <Button variant="success" onClick={Copy}>
+                  コピー
+                </Button>
+                {
+                  message !== null && (
+                    <Alert variant="success" className="mt-3">
+                      {message}
+                    </Alert>
+                  )
+                }
+              </Form>
+            </>
+          )
+        }
       </div>
     </Layout>
   );
