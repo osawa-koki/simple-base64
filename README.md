@@ -1,4 +1,4 @@
-# nextjs-template.modern
+# simple-base64
 
 🦖🦖🦖 データをBASE64エンコード・デコードするサイトです。  
 
