@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout menu={false} footer={false}>
       <div id='Index'>
-        <h1>simple-base64💓</h1>
+        <h1 className="mt-5">simple-base64💓</h1>
         <img id='Logo' src={`${setting.basePath}/tako.png`} alt="Logo" />
         <p className="mt-5">BASE64エンコード・デコードするサイトです。</p>
         <div id="IndexLink" className="mt-5">
