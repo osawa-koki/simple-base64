@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button, Alert, Form } from 'react-bootstrap';
 import Layout from "../components/Layout";
 
-import PageBlock from "../components/menu";
+import PageBlock from "../components/Menu";
 
 const mail_regex = new RegExp(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
 
