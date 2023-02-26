@@ -10,10 +10,10 @@ export default function Home() {
         <img id='Logo' src={`${setting.basePath}/tako.png`} alt="Logo" className="mt-3" />
         <p className="mt-5">BASE64エンコード・デコードするサイトです。</p>
         <div id="IndexLink" className="mt-5">
-          <Link href={`${setting.basePath}/encoder/`} className="EncoderLink btn btn-outline-primary">
+          <Link href={`/encoder/`} className="EncoderLink btn btn-outline-primary">
             <div>BASE64エンコード</div>
           </Link>
-          <Link href={`${setting.basePath}/decoder/`} className="DecoderLink btn btn-outline-success">
+          <Link href={`/decoder/`} className="DecoderLink btn btn-outline-success">
             <div>BASE64デコード</div>
           </Link>
         </div>

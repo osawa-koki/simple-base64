@@ -2,7 +2,7 @@
 
 🦖🦖🦖 データをBASE64エンコード・デコードするサイトです。  
 
-![成果物](./.development/img/fruit.gif)  
+![成果物](./docs/img/fruit.gif)  
 
 ## 使い方
 
