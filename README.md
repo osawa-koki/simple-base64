@@ -1,6 +1,6 @@
 # nextjs-template.modern
 
-🍔🍔🍔 データをBASE64エンコード・デコードするサイトです。  
+🦖🦖🦖 データをBASE64エンコード・デコードするサイトです。  
 
 ![成果物](./.development/img/fruit.gif)  
 
